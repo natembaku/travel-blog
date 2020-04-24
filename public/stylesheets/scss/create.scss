@@ -1,0 +1,148 @@
+
+body{
+  main{
+    .content{
+      header{
+        background-color: #000000b3;
+        color: white;
+        padding: 30px;
+        p{
+          margin: 40px 0px;
+        }
+      }
+      form{
+        // give the text a greyish look
+        color: #4f4e4e;
+        // bg-color
+        background-color: white;
+        padding: 20px 10px;
+        input{
+          height: 55px;
+          width: 70%;
+          font-size: 35px;
+        }
+        .edit_button{
+          margin: 20px 10px;
+          outline: none;
+          background-color: transparent;
+          border: 3px #4f4e4e solid;
+          border-radius: 80px;
+          padding: 0px 50px;
+          p{
+            margin: 20px 0px;
+            color: #4f4e4e;
+            font-size: 50px;
+          }
+          // for hover
+          &:hover{
+            background-color:  #b6b6b6f0;
+          }
+          // for active
+          &:active{
+            background-color: white;
+          }
+        }
+      }
+    }
+    // the log in
+    .logged_out{
+      font-size: 30px;
+      background-color: white;
+      margin: 0px;
+      padding: 30px 0px;
+    }
+  }
+}
+
+// responsive design
+// tablet view
+@media only screen and (min-device-width:700px) {
+  body{
+    main{
+      .content{
+        header{
+          h1{
+            font-size: 50px;
+          }
+          p{
+            font-size: 25px;
+          }
+        }
+        form{
+          // changed padding
+          padding: 20px 20px;
+          // edited input
+          input{
+            height: 30px;
+            width: 95%;
+            font-size: 26px;
+          }
+          .input_box{
+            width: 48%;
+            display: inline-block;
+          }
+          .edit_button{
+            // edited button size
+            padding: 0px 40px;
+            p{
+              font-size: 25px;
+            }
+          }
+        }
+      }
+      .logged_out{
+        font-size: 25px;
+      }
+
+    }
+  }
+}
+
+@media only screen and (min-device-width:1000px) {
+  body{
+    main{
+      .content{
+        display: grid;
+        grid-template-columns: 15% 1fr;
+        header{
+          // grid columns
+          grid-column: 1/3;
+          -webkit-grid-column: 1/3;
+          padding: 20px 15%;
+          p{
+            font-size: 18px;
+          }
+
+        }
+        form{
+          // grid columns
+          grid-column: 2/3;
+          -webkit-grid-column: 2/3;
+          padding: 30px  15px;
+          // centers content
+          padding-right: 16%;
+          // edited input
+          input{
+            height: 20px;
+            width: 75%;
+            font-size: 17px;
+          }
+          .edit_button{
+            // edited width
+            padding: 0px 25px;
+            // border
+            border: 2px #4f4e4e solid;
+            p{
+              // change size of font
+              font-size: 17px;
+              margin: 9px 0px;
+            }
+          }
+        }
+      }
+      .logged_out{
+        font-size: 17px;
+      }
+    }
+  }
+}

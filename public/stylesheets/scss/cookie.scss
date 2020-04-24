@@ -1,0 +1,65 @@
+@keyframes fadeIn {
+  from{opacity: 0}
+  to{opacity: 1}
+}
+
+#cookie{
+  display: none;
+}
+
+// desktop view
+@media only screen and (min-device-width:1000px) {
+  #cookie{
+    animation: fadeIn 3s;
+    // colors
+    color: #4f4e4e;
+    background-color: white;
+    // positions
+    display: block;
+    position: fixed;
+    width: 15%;
+    bottom: 5%;
+    text-align: center;
+    padding-bottom: 20px;
+    h4{
+      margin: 10px 0px;
+    }
+    p{
+      font-size: 12px
+    }
+    figure{
+      margin: 0px 25%;
+      width: 50%;
+      img{
+        width: 100%;
+      }
+    }
+    margin: 10px 0px;
+    form{
+      padding: 0px;
+      button{
+        // edited width
+        padding: 0px 25px;
+        // border
+        border: 2px #4f4e4e solid;
+        // border radius
+        border-radius: 80px;
+        p{
+          // change size of font
+          font-size: 12px;
+          margin: 9px 0px;
+          color: #4f4e4e;
+        }
+        // for hover
+        &:hover{
+          background-color: #b6b6b6f0;
+        }
+        // for active
+        &:active{
+          background-color: white;
+        }
+      }
+    }
+
+  }
+}

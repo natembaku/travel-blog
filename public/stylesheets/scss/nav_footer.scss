@@ -1,0 +1,266 @@
+// font
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+body {
+    // sets fonts
+    * {
+        font-family: 'Slabo 27px', serif;
+        font-family: 'Quicksand', sans-serif;
+    }
+    // removes margin
+    margin: 0px;
+    // gives background image
+    background-image: url('/../images/architecture-buildings-business-1134166.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    // for both navs
+    nav {
+        background-color: white;
+        * {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    // the nav that sticks
+    .sticky_nav {
+        // sets z-index
+        z-index: 2;
+        // push from top
+        padding-top: 3px;
+        // making this nav sticky
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        // give height
+        height: 135px;
+        // the logo
+        a {
+            figure {
+                width: 250px;
+                margin: 0px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        // the links menu
+        .menu {
+            // to push to right with a little space from the side
+            margin-right: 20px;
+            float: right;
+            .menu_content {
+                span {
+                    a {
+                        p {
+                            // setting colors
+                            color: black;
+                            // background-color: lightblue;
+                            // giving size
+                            margin: 0px;
+                            padding: 45px 15px;
+                            font-size: 35px;
+                            // radius
+                            border-radius: 6px;
+                            &:hover {
+                                background-color: #cdcdcd;
+                            }
+                            &:active {
+                                background-color: grey;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // this nav is static
+    .static_nav {
+        padding-top: 3px;
+        // setting colors
+        color: white;
+        background-color: grey;
+        // make space for sticky nav
+        margin-top: 135px;
+        width: 100%;
+        height: 90px;
+        p {
+            font-size: 30px;
+        }
+        .signedIn {
+            margin-left: 20px;
+            p {
+                margin: 20px 0px;
+            }
+        }
+        .signIn_signUp {
+            padding: 5px 0px;
+            // to push to right with a little space from the side
+            margin-right: 20px;
+            float: right;
+            .or {
+                padding: 10px 0px;
+                margin: 0px;
+            }
+            a {
+                // the button
+                button {
+                    background-color: transparent;
+                    border: 3px white solid;
+                    outline: none;
+                    border-radius: 80px;
+                    padding: 0px 30px;
+                    p {
+                        margin: 16px 0px;
+                        color: white;
+                    }
+                    // for hover
+                    &:hover {
+                        background-color: #9b9b9b;
+                    }
+                    // for active
+                    &:active {
+                        background-color: white;
+                    }
+                }
+            }
+        }
+    }
+    .content {
+        margin: 0px;
+        width: 100%;
+    }
+    footer {
+        display: none !important;
+        color: white;
+        background-color: grey;
+        section {
+            padding: 20px 0px;
+            ul,
+            h3 {
+                padding-left: 10px;
+            }
+            a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+        .absolute_footer {
+            background-color: #363636;
+            padding-bottom: 10px;
+            p {
+                margin: 0px;
+            }
+        }
+        // gives padding
+        section,
+        .absolute_footer {
+            padding-left: 30px;
+        }
+    }
+}
+
+// responsive design
+// tablet view
+@media only screen and (min-device-width:700px) {
+    body {
+        nav {}
+        // sticky
+        .sticky_nav {
+            height: 112px;
+            .menu {
+                .menu_content {
+                    span {
+                        a {
+                            p {
+                                padding: 41px 15px;
+                                font-size: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // static
+        .static_nav {
+            margin-top: 112px;
+            height: 75px;
+            p {
+                font-size: 22px;
+            }
+        }
+        // footer
+        footer {
+            section {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                .contact_site {
+                    grid-column: 1/2;
+                    grid-row: 1/2;
+                }
+                .links {
+                    grid-column: 2/3;
+                    grid-row: 1/2;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-device-width:1020px) {
+    body {
+        // sticky
+        .sticky_nav {
+            height: 52px;
+            // adjust logo size
+            a {
+                figure {
+                    width: 120px;
+                }
+            }
+            .menu {
+                .menu_content {
+                    span {
+                        a {
+                            // adjusted link sizes
+                            p {
+                                padding: 16px 24px;
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // static
+        .static_nav {
+            // edited height
+            height: 44px;
+            margin-top: 55px;
+            // overall font size
+            p {
+                font-size: 13px;
+            }
+            .signedIn {
+                p {
+                    margin: 13px 0px;
+                }
+            }
+            .signIn_signUp {
+                padding: 2px 0px;
+                // edited button size
+                a {
+                    button {
+                        border: 2px white solid;
+                        padding: 0px 20px;
+                        p {
+                            margin: 10px 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

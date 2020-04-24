@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css?family=Slabo+27px");
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+body {
+  background-image: url("/../images/architecture-buildings-business-1134166.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0px; }
+  body * {
+    font-family: 'Slabo 27px', serif;
+    font-family: 'Quicksand', sans-serif; }
+  body main form {
+    margin: 7vh 0px;
+    min-height: 80vh;
+    background-color: white;
+    border-radius: 6px;
+    padding: 30px; }
+    body main form h2 {
+      font-size: 60px; }
+    body main form h3 {
+      font-size: 48px; }
+    body main form p {
+      font-size: 45px; }
+    body main form input {
+      width: 90%;
+      height: 65px;
+      font-size: 40px; }
+    body main form #check {
+      margin-top: 30px;
+      width: 25px !important;
+      background-color: blue; }
+    body main form button {
+      margin: 30px 0px;
+      width: 100%;
+      color: white;
+      background-color: #28ff28;
+      border: none;
+      outline: none;
+      border-radius: 18px; }
+      body main form button p {
+        margin: 40px 0px; }
+      body main form button:hover {
+        background-color: #4eff4e; }
+      body main form button:active {
+        background-color: #009b00; }
+
+@media only screen and (min-device-width: 700px) {
+  body main form {
+    margin: 7vh 10%; }
+    body main form h2 {
+      font-size: 50px; }
+    body main form h3 {
+      font-size: 40px; }
+    body main form p {
+      font-size: 35px; }
+    body main form input {
+      height: 55px;
+      font-size: 35px; }
+    body main form button p {
+      margin: 35px 0px; } }
+@media only screen and (min-device-width: 1000px) {
+  body main form {
+    min-height: 91vh;
+    margin: 0px 20%;
+    padding: 30px 18%; }
+    body main form h2 {
+      font-size: 30px; }
+    body main form h3 {
+      font-size: 20px; }
+    body main form p {
+      font-size: 17px; }
+    body main form input {
+      width: 80%;
+      height: 19px;
+      font-size: 15px; }
+    body main form button {
+      width: 70%; }
+      body main form button p {
+        margin: 14px 0px; } }
+
+/*# sourceMappingURL=sign_register.css.map */

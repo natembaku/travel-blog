@@ -1,0 +1,117 @@
+body main .content header {
+  background-color: #000000b3;
+  color: white;
+  padding: 30px;
+}
+body main .content header p {
+  margin: 40px 0px;
+}
+body main .content .post {
+  padding: 20px 10px;
+  background-color: white;
+  color: #4f4e4e;
+}
+body main .content .post .post-heading {
+  padding-top: 30px;
+  z-index: 1;
+  background-color: white;
+}
+body main .content .post .post-image {
+  margin: 0px;
+  width: 100%;
+}
+body main .content .post .post-image img {
+  width: 100%;
+  height: 100%;
+}
+body main .content .post .post-body {
+  z-index: 1;
+  background-color: white;
+}
+body main .content .post .post-footer {
+  padding-bottom: 30px;
+  z-index: 1;
+  background-color: white;
+}
+body main .content .post .post-footer .edit_delete .edit_button {
+  outline: none;
+  background-color: transparent;
+  border: 3px #4f4e4e solid;
+  border-radius: 80px;
+  padding: 0px 50px;
+}
+body main .content .post .post-footer .edit_delete .edit_button p {
+  margin: 20px 0px;
+  color: #4f4e4e;
+  font-size: 50px;
+}
+body main .content .post .post-footer .edit_delete .edit_button:hover {
+  background-color: #b6b6b6f0;
+}
+body main .content .post .post-footer .edit_delete .edit_button:active {
+  background-color: white;
+}
+
+@media only screen and (min-device-width: 700px) {
+  body main .content header h1 {
+    font-size: 50px;
+  }
+  body main .content header p {
+    font-size: 25px;
+  }
+  body main .content .post h2 {
+    font-size: 40px;
+  }
+  body main .content .post p {
+    font-size: 30px;
+  }
+  body main .content .post .post-image {
+    width: 80%;
+    margin: 0px 10%;
+  }
+  body main .content .post .post-footer .edit_delete .edit_button {
+    padding: 0px 40px;
+  }
+  body main .content .post .post-footer .edit_delete .edit_button p {
+    font-size: 25px;
+  }
+}
+@media only screen and (min-device-width: 1000px) {
+  body main .content {
+    display: grid;
+    grid-template-columns: 15% 1fr;
+  }
+  body main .content header {
+    grid-column: 1/3;
+    -webkit-grid-column: 1/3;
+    padding: 20px 15%;
+  }
+  body main .content header p {
+    font-size: 18px;
+  }
+  body main .content .post {
+    grid-column: 2/3;
+    -webkit-grid-column: 2/3;
+    padding-right: 16%;
+  }
+  body main .content .post h2 {
+    font-size: 20px;
+  }
+  body main .content .post p {
+    font-size: 15px;
+  }
+  body main .content .post .post-image {
+    width: 60%;
+    margin: 0px 20%;
+  }
+  body main .content .post .post-footer .edit_delete .edit_button {
+    padding: 0px 25px;
+    border: 2px #4f4e4e solid;
+  }
+  body main .content .post .post-footer .edit_delete .edit_button p {
+    font-size: 17px;
+    margin: 9px 0px;
+  }
+}
+
+/*# sourceMappingURL=view.css.map */

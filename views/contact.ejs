@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <!-- vaiables use <%=  %>  -->
+      <!-- Other functions use <%  %> -->
+
+    <title><%= title %></title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
+
+    <!-- the usual styles -->
+    <link rel="stylesheet" href="/stylesheets/css/nav_footer.css">
+    <link rel="stylesheet" href="/stylesheets/css/create.css">
+
+    <style media="screen">
+      .contact_page{
+        color: red !important;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!-- the nav bar -->
+      <% include templates/nav.ejs %>
+      <div class="content">
+        <header>
+          <h1>Contact Us:</h1>
+          <p>Show us what you have to say, help us improve our website, or just have a nice chat with one of our staff!</p>
+        </header>
+        <form class="" action="index.html" method="post">
+          <div class="input_box">
+            <h3>Name:</h3>
+            <input type="text" name="" value="<%= user %>" placeholder="Name">
+          </div>
+          <div class="input_box">
+            <h3>Email:</h3>
+            <input type="text" name="" value="" placeholder="Email">
+          </div>
+          <h3>Say Something:</h3>
+          <textarea id="summernote" name="content" ></textarea>
+          <a href="/"><button type="button" name="button" class="edit_button"><p>submit</p></button></a>
+        </form>
+      </div>
+      <!-- the footer -->
+      <% include templates/footer.ejs %>
+    </main>
+    <script type="text/javascript">
+      $('#summernote').summernote({
+        height: 300,                 // set editor height
+        minHeight: null,             // set minimum height of editor
+        maxHeight: null,             // set maximum height of editor
+        focus: true                  // set focus to editable area after initializing summernote
+      });
+    </script>
+  </body>
+</html>

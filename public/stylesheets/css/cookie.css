@@ -1,0 +1,45 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+#cookie {
+  display: none; }
+
+@media only screen and (min-device-width: 1000px) {
+  #cookie {
+    animation: fadeIn 3s;
+    color: #4f4e4e;
+    background-color: white;
+    display: block;
+    position: fixed;
+    width: 15%;
+    bottom: 5%;
+    text-align: center;
+    padding-bottom: 20px;
+    margin: 10px 0px; }
+    #cookie h4 {
+      margin: 10px 0px; }
+    #cookie p {
+      font-size: 12px; }
+    #cookie figure {
+      margin: 0px 25%;
+      width: 50%; }
+      #cookie figure img {
+        width: 100%; }
+    #cookie form {
+      padding: 0px; }
+      #cookie form button {
+        padding: 0px 25px;
+        border: 2px #4f4e4e solid;
+        border-radius: 80px; }
+        #cookie form button p {
+          font-size: 12px;
+          margin: 9px 0px;
+          color: #4f4e4e; }
+        #cookie form button:hover {
+          background-color: #b6b6b6f0; }
+        #cookie form button:active {
+          background-color: white; } }
+
+/*# sourceMappingURL=cookie.css.map */

@@ -1,84 +1,97 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+
+<head>
     <meta charset="utf-8">
-      <!-- vaiables use <%=  %>  -->
-      <!-- Other functions use <%  %> -->
-    <title><%= title %></title>
+    <!-- vaiables use <%=  %>  -->
+    <!-- Other functions use <%  %> -->
+    <title>
+        <%= title %>
+    </title>
+    <link rel="icon" href="/public/images/icons_logos/favicon.ico">
     <!-- usual styles -->
     <link rel="stylesheet" href="/stylesheets/css/nav_footer.css">
     <link rel="stylesheet" href="/stylesheets/css/main.css">
     <link rel="stylesheet" href="/stylesheets/css/cookie.css">
     <style media="screen">
-      .home_page{
-        color: red !important;
-      }
+        .home_page {
+            color: red !important;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <main>
-      <!-- the nav bar -->
-      <% include templates/nav.ejs %>
-      <div class="content">
-        <header>
-          <article class="intro">
-            <h1>Bloggle</h1>
-            <h3>Where the globe comes together</h3>
-            <p>It's our traveling blog for those with an adventurous side.Travel is the movement of people between distant geographical locations. Travel can be done by foot, bicycle, automobile, train, boat, bus, airplane, or other means, with or without luggage, and can be one way or round trip.Travel can also include relatively short stays between successive movements.</p>
-            <!-- to display a log in or log out button -->
-            <%if (logedIn == false){%>
-              <a href="/sign_in"><button type="button" name="button" class="log_button"><p>Log In</p></button></a>
-            <%}else{%>
-              <a href="/sign_out"><button type="button" name="button" class="log_button"><p>Log Out</p></button></a>
-            <%}%>
-            <a href="/create"><button type="button" name="button" class="log_button"><p>Post</p></button></a>
-          </article>
-          <!-- <figure>
+        <!-- the nav bar -->
+        <% include templates/nav.ejs %>
+            <div class="content">
+                <header>
+                    <article class="intro">
+                        <h1>Bloggle</h1>
+                        <h3>Where the globe comes together</h3>
+                        <p>It's our traveling blog for those with an adventurous side.Travel is the movement of people between distant geographical locations. Travel can be done by foot, bicycle, automobile, train, boat, bus, airplane, or other means, with
+                            or without luggage, and can be one way or round trip.Travel can also include relatively short stays between successive movements.</p>
+                        <!-- to display a log in or log out button -->
+                        <%if (logedIn == false){%>
+                            <a href="/sign_in"><button type="button" name="button" class="log_button"><p>Log In</p></button></a>
+                            <%}else{%>
+                                <a href="/sign_out"><button type="button" name="button" class="log_button"><p>Log Out</p></button></a>
+                                <%}%>
+                                    <a href="/create"><button type="button" name="button" class="log_button"><p>Post</p></button></a>
+                    </article>
+                    <!-- <figure>
             <img src="images/old-1130743_960_720.jpg" alt="">
           </figure> -->
-        </header>
-        <!-- display latest blog post -->
-        <div class="latest_post">
-          <h2 class="h2">Latest:</h2>
-          <div class="post">
-            <% if (posts.length != 0){ %>
-              <div class="post-heading">
-                <h2><%= posts[posts.length-1].title %></h2>
-                <p><%= posts[posts.length-1].date %></p>
-              </div>
-              <figure class="post-image">
-                <img src="<%= posts[posts.length-1].image %>" alt="Post Image">
-                <!-- <img src="/images/old-1130743_960_720.jpg" alt="Post Image"> -->
-              </figure>
-              <div class="post-body">
-              <%- posts[posts.length-1].description %>
-              </div>
-              <div class="post-footer">
-                <p>Author: <%= posts[posts.length-1].author %></p>
-                <div class="edit_delete">
-                  <a href="/view/<%- posts[posts.length-1].id%>"><button type="button" name="button" class="edit_button"><p>Read More</p></button></a>
-                    <%if(user == posts[posts.length-1].author){%>
-                    <a href='/edit/<%- posts[posts.length-1].id%>'>
-                      <button type="button" name="button" class="edit_button"><p>Edit</p></button></a>
-                    <a href='/delete/<%- posts[posts.length-1].id%>'>
-                      <button type="button" name="button" class="edit_button"><p>Delete</p></button></a>
-                    <%}%>
-                  </div>
-              </div>
-              <!-- displays if no blog posts are available -->
-            <% } else{ %>
-              <p>No available blog posts!</p>
-            <% }  %>
-          </div>
-        </div>
-        <!-- if there is no cookie show this -->
-        <% if(cookieWarning == false){%>
-          <% include templates/cookie.ejs%>
-        <%}%>
-      </div>
-      <!-- the footer -->
-      <% include templates/footer.ejs %>
+                </header>
+                <!-- display latest blog post -->
+                <div class="latest_post">
+                    <h2 class="h2">Latest:</h2>
+                    <div class="post">
+                        <% if (posts.length != 0){ %>
+                            <div class="post-heading">
+                                <h2>
+                                    <%= posts[posts.length-1].title %>
+                                </h2>
+                                <p>
+                                    <%= posts[posts.length-1].date %>
+                                </p>
+                            </div>
+                            <figure class="post-image">
+                                <img src="<%= posts[posts.length-1].image %>" alt="Post Image">
+                                <!-- <img src="/images/old-1130743_960_720.jpg" alt="Post Image"> -->
+                            </figure>
+                            <div class="post-body">
+                                <%- posts[posts.length-1].description %>
+                            </div>
+                            <div class="post-footer">
+                                <p>Author:
+                                    <%= posts[posts.length-1].author %>
+                                </p>
+                                <div class="edit_delete">
+                                    <a href="/view/<%- posts[posts.length-1].id%>"><button type="button" name="button" class="edit_button"><p>Read More</p></button></a>
+                                    <%if(user == posts[posts.length-1].author){%>
+                                        <a href='/edit/<%- posts[posts.length-1].id%>'>
+                                            <button type="button" name="button" class="edit_button"><p>Edit</p></button></a>
+                                        <a href='/delete/<%- posts[posts.length-1].id%>'>
+                                            <button type="button" name="button" class="edit_button"><p>Delete</p></button></a>
+                                        <%}%>
+                                </div>
+                            </div>
+                            <!-- displays if no blog posts are available -->
+                            <% } else{ %>
+                                <p>No available blog posts!</p>
+                                <% }  %>
+                    </div>
+                </div>
+                <!-- if there is no cookie show this -->
+                <% if(cookieWarning == false){%>
+                    <% include templates/cookie.ejs%>
+                        <%}%>
+            </div>
+            <!-- the footer -->
+            <% include templates/footer.ejs %>
     </main>
 
-  </body>
+</body>
+
 </html>

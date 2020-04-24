@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="icon" href="/images/icons_logos/favicon.ico">
 
     <!-- usual styles -->
     <link rel="stylesheet" href="/stylesheets/css/nav_footer.css">
@@ -10,48 +14,56 @@
     <link rel="stylesheet" href="/stylesheets/css/cookie.css">
 
     <style media="screen">
-      .archive_page{
-        color: red;
-      }
+        .archive_page {
+            color: red;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <main>
-      <!-- the nav bar -->
-      <% include templates/nav.ejs %>
-      <div class="content">
-        <div class="post">
-          <% if (posts.length != 0){ %>
-            <div class="post-heading">
-              <h2><%= posts[id].title %></h2>
-              <h2><%= posts[posts.length-1].date %></h2>
+        <!-- the nav bar -->
+        <% include templates/nav.ejs %>
+            <div class="content">
+                <div class="post">
+                    <% if (posts.length != 0){ %>
+                        <div class="post-heading">
+                            <h2>
+                                <%= posts[id].title %>
+                            </h2>
+                            <h2>
+                                <%= posts[posts.length-1].date %>
+                            </h2>
+                        </div>
+                        <div class="post-body">
+                            <figure class="post-image">
+                                <img src="<%- posts[id].image %>" alt="Responsive image">
+                            </figure>
+                            <%- posts[id].content %>
+                        </div>
+                        <div class="post-footer">
+                            <p>Author:
+                                <%= posts[id].author %>
+                            </p>
+                            <div class="edit_delete">
+                                <%if(user == posts[id].author){%>
+                                    <a href='/edit/<%-  posts[id].id %>'>
+                                        <button type="button" name="button" class="edit_button"><p>Edit</p></button></a>
+                                    <a href='/delete/<%- posts[id].id %>'>
+                                        <button type="button" name="button" class="edit_button"><p>Delete</p></button></a>
+                                    <%}%>
+                            </div>
+                        </div>
+                        <% } %>
+                </div>
+                <!-- if there is no cookie show this -->
+                <% if(cookieWarning == false){%>
+                    <% include templates/cookie.ejs%>
+                        <%}%>
             </div>
-            <div class="post-body">
-              <figure class="post-image">
-                <img src="<%- posts[id].image %>" alt="Responsive image">
-              </figure>
-              <%- posts[id].content %>
-            </div>
-            <div class="post-footer">
-              <p>Author: <%= posts[id].author %></p>
-              <div class="edit_delete">
-                  <%if(user == posts[id].author){%>
-                    <a href='/edit/<%-  posts[id].id %>'>
-                      <button type="button" name="button" class="edit_button"><p>Edit</p></button></a>
-                    <a href='/delete/<%- posts[id].id %>'>
-                      <button type="button" name="button" class="edit_button"><p>Delete</p></button></a>
-                  <%}%>
-              </div>
-            </div>
-          <% } %>
-        </div>
-        <!-- if there is no cookie show this -->
-        <% if(cookieWarning == false){%>
-          <% include templates/cookie.ejs%>
-        <%}%>
-      </div>
-      <!-- the footer -->
-      <% include templates/footer.ejs %>
+            <!-- the footer -->
+            <% include templates/footer.ejs %>
     </main>
-  </body>
+</body>
+
 </html>

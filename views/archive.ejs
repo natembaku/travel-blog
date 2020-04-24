@@ -1,72 +1,84 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="icon" href="/images/icons_logos/favicon.ico">
 
     <!-- usual styles -->
     <link rel="stylesheet" href="/stylesheets/css/nav_footer.css">
     <link rel="stylesheet" href="/stylesheets/css/main.css">
     <link rel="stylesheet" href="/stylesheets/css/cookie.css">
-    
-    <style media="screen">
-      .archive_page{
-        color: red !important;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <!-- the nav bar -->
-      <% include templates/nav.ejs %>
-      <!-- display all blog posts -->
-      <div class="content">
-        <header>
-          <div class="intro">
 
-            <h1>Archive</h1>
-          </div>
-        </header>
-        <div class="All_posts">
-          <% if (posts.length != 0){ %>
-            <% posts.forEach(function(posts){ %>
-              <div class="post">
-                <div class="post-heading">
-                  <h2><%= posts.title %></h2>
-                  <p><%= posts.date %></p>
+    <style media="screen">
+        .archive_page {
+            color: red !important;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <!-- the nav bar -->
+        <% include templates/nav.ejs %>
+            <!-- display all blog posts -->
+            <div class="content">
+                <header>
+                    <div class="intro">
+
+                        <h1>Archive</h1>
+                    </div>
+                </header>
+                <div class="All_posts">
+                    <% if (posts.length != 0){ %>
+                        <% posts.forEach(function(posts){ %>
+                            <div class="post">
+                                <div class="post-heading">
+                                    <h2>
+                                        <%= posts.title %>
+                                    </h2>
+                                    <p>
+                                        <%= posts.date %>
+                                    </p>
+                                </div>
+                                <figure class="post-image">
+                                    <img src="<%= posts.image %>" alt="Post Image">
+                                    <!-- <img src="/images/old-1130743_960_720.jpg" alt="Post Image"> -->
+                                </figure>
+                                <div class="post-body">
+                                    <%- posts.description %>
+                                </div>
+                                <div class="post-footer">
+                                    <p>Author:
+                                        <%= posts.author %>
+                                    </p>
+                                    <div class="edit_delete">
+                                        <a href="/view/<%- posts.id %>"><button type="button" name="button" class="edit_button"><p>Read More</p></button></a>
+                                        <%if(user == posts.author){%>
+                                            <a href="/edit/<%- posts.id %>"><button type="button" name="button" class="edit_button"><p>Edit</p></button></a>
+                                            <a href='/delete/<%- posts.id%>'>
+                                                <button type="button" name="button" class="edit_button"><p>Delete</p></button></a>
+                                            <%}%>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }); %>
+                                <!-- to display if no post are available -->
+                                <% } else{ %>
+                                    <p>No available blog posts!</p>
+                                    <% }  %>
                 </div>
-                <figure class="post-image">
-                  <img src="<%= posts.image %>" alt="Post Image">
-                  <!-- <img src="/images/old-1130743_960_720.jpg" alt="Post Image"> -->
-                </figure>
-                <div class="post-body">
-                  <%- posts.description %>
-                </div>
-                <div class="post-footer">
-                  <p>Author: <%= posts.author %></p>
-                  <div class="edit_delete">
-                    <a href="/view/<%- posts.id %>"><button type="button" name="button" class="edit_button"><p>Read More</p></button></a>
-                    <%if(user == posts.author){%>
-                      <a href="/edit/<%- posts.id %>"><button type="button" name="button" class="edit_button"><p>Edit</p></button></a>
-                      <a href='/delete/<%- posts.id%>'>
-                        <button type="button" name="button" class="edit_button"><p>Delete</p></button></a>
-                    <%}%>
-                  </div>
-                </div>
-              </div>
-            <% }); %>
-              <!-- to display if no post are available -->
-          <% } else{ %>
-              <p>No available blog posts!</p>
-            <% }  %>
-        </div>
-        <!-- if there is no cookie show this -->
-        <% if(cookieWarning == false){%>
-          <% include templates/cookie.ejs%>
-        <%}%>
-      </div>
-      <!-- the footer -->
-      <% include templates/footer.ejs %>
+                <!-- if there is no cookie show this -->
+                <% if(cookieWarning == false){%>
+                    <% include templates/cookie.ejs%>
+                        <%}%>
+            </div>
+            <!-- the footer -->
+            <% include templates/footer.ejs %>
     </main>
-  </body>
+</body>
+
 </html>

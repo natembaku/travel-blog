@@ -1,302 +1,304 @@
-body{
-  main{
-    .content{
-      header{
-        background-color: #000000b3;
-        color: white;
-        padding: 30px;
-        .intro{
-          p{
-            margin: 40px 0px;
-          }
-          a{
-            .log_button{
-              outline: none;
-              background-color: transparent;
-              border: 3px white solid;
-              border-radius: 80px;
-              padding: 0px 50px;
-              p{
-                margin: 20px 0px;
+body {
+    main {
+        .content {
+            header {
+                background-color: #000000b3;
                 color: white;
-                font-size: 50px;
-              }
-              // for hover
-              &:hover{
-                background-color: rgba(255, 255, 255, 0.3);
-              }
-              // for active
-              &:active{
-                background-color: black;
-              }
-            }
-          }
-        }
-      }
-      .latest_post, .All_posts{
-        // give the text a greyish look
-        color: #4f4e4e;
-      }
-      .latest_post, .All_posts{
-        // give the text a greyish look
-        color: #4f4e4e;
-        padding: 30px;
-        background-color: white;
-        .h2{
-          margin-top: 0px;
-          text-decoration: underline red;
-        }
-        .post{
-          margin: 20px 0px;
-          // gives a border radius
-          border-radius: 6px;
-          overflow: hidden;
-          // creates a grid
-          display: grid;
-          grid-template-columns:25% 10% 1fr;
-          .post-heading{
-            padding-top: 30px;
-            grid-column: 1/4;
-            grid-row: 1/2;
-            -webkit-grid-column: 1/4;
-            -webkit-grid-row: 1/2;
-            // so it can sit on top of the image
-            z-index: 1;
-            background-color: white;
-          }
-          .post-image{
-            grid-column: 1/4;
-            grid-row: 2/3;
-            -webkit-grid-column: 1/4;
-            -webkit-grid-row: 2/3;
-            // removes margin
-            margin: 0px;
-            // width of the figure
-            width: 100%;
-            // background-color: when there is no image
-            background-color: grey;
-            // image styles
-            img{
-              width: 100%;
-              height: 100%;
-            }
-          }
-          .post-body{
-            grid-column: 1/4;
-            grid-row: 3/4;
-            -webkit-grid-column: 1/4;
-            -webkit-grid-row: 3/4;
-            // so it can sit on top of the image
-            z-index: 1;
-            background-color: white;
-          }
-          .post-footer{
-            // gives slight bottom padding
-            padding-bottom: 30px;
-            grid-column: 1/4;
-            grid-row: 4/5;
-            -webkit-grid-column: 1/4;
-            -webkit-grid-row: 4/5;
-            // so it can sit on top of the image
-            z-index: 1;
-            background-color: white;
-            .edit_delete{
-              .edit_button{
-                outline: none;
-                background-color: transparent;
-                border: 3px #4f4e4e solid;
-                border-radius: 80px;
-                padding: 0px 50px;
-                p{
-                  margin: 20px 0px;
-                  color: #4f4e4e;
-                  font-size: 50px;
+                padding: 30px;
+                .intro {
+                    p {
+                        margin: 40px 0px;
+                    }
+                    a {
+                        .log_button {
+                            outline: none;
+                            background-color: transparent;
+                            border: 3px white solid;
+                            border-radius: 80px;
+                            padding: 0px 50px;
+                            p {
+                                margin: 20px 0px;
+                                color: white;
+                                font-size: 50px;
+                            }
+                            // for hover
+                            &:hover {
+                                background-color: rgba(255, 255, 255, 0.3);
+                            }
+                            // for active
+                            &:active {
+                                background-color: black;
+                            }
+                        }
+                    }
                 }
-                // for hover
-                &:hover{
-                  background-color: #b6b6b6f0;
-                }
-                // for active
-                &:active{
-                  background-color: white;
-                }
-              }
             }
-          }
+            .latest_post,
+            .All_posts {
+                // give the text a greyish look
+                color: #4f4e4e;
+            }
+            .latest_post,
+            .All_posts {
+                // give the text a greyish look
+                color: #4f4e4e;
+                padding: 30px;
+                background-color: white;
+                .h2 {
+                    margin-top: 0px;
+                    text-decoration: underline red;
+                }
+                .post {
+                    margin: 20px 0px;
+                    // gives a border radius
+                    border-radius: 6px;
+                    overflow: hidden;
+                    // creates a grid
+                    display: grid;
+                    grid-template-columns: 25% 10% 1fr;
+                    .post-heading {
+                        padding-top: 30px;
+                        grid-column: 1/4;
+                        grid-row: 1/2;
+                        -webkit-grid-column: 1/4;
+                        -webkit-grid-row: 1/2;
+                        // so it can sit on top of the image
+                        z-index: 1;
+                        background-color: white;
+                    }
+                    .post-image {
+                        grid-column: 1/4;
+                        grid-row: 2/3;
+                        -webkit-grid-column: 1/4;
+                        -webkit-grid-row: 2/3;
+                        // removes margin
+                        margin: 0px;
+                        // width of the figure
+                        width: 100%;
+                        // background-color: when there is no image
+                        background-color: grey;
+                        // image styles
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .post-body {
+                        grid-column: 1/4;
+                        grid-row: 3/4;
+                        -webkit-grid-column: 1/4;
+                        -webkit-grid-row: 3/4;
+                        // so it can sit on top of the image
+                        z-index: 1;
+                        background-color: white;
+                    }
+                    .post-footer {
+                        // gives slight bottom padding
+                        padding-bottom: 30px;
+                        grid-column: 1/4;
+                        grid-row: 4/5;
+                        -webkit-grid-column: 1/4;
+                        -webkit-grid-row: 4/5;
+                        // so it can sit on top of the image
+                        z-index: 1;
+                        background-color: white;
+                        .edit_delete {
+                            .edit_button {
+                                outline: none;
+                                background-color: transparent;
+                                border: 3px #4f4e4e solid;
+                                border-radius: 80px;
+                                padding: 0px 50px;
+                                p {
+                                    margin: 20px 0px;
+                                    color: #4f4e4e;
+                                    font-size: 50px;
+                                }
+                                // for hover
+                                &:hover {
+                                    background-color: #b6b6b6f0;
+                                }
+                                // for active
+                                &:active {
+                                    background-color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }
-
 
 // responsive design
 // tablet view
-
 @media only screen and (min-device-width:700px) {
-  body{
-    main{
-      .content{
-        header{
-          .intro{
-            h1{
-              font-size: 50px;
-            }
-            p{
-              font-size: 25px;
-            }
-            a{
-              .log_button{
-                padding: 0px 40px;
-                p{
-                  font-size: 25px;
+    body {
+        main {
+            .content {
+                header {
+                    .intro {
+                        h1 {
+                            font-size: 50px;
+                        }
+                        p {
+                            font-size: 25px;
+                        }
+                        a {
+                            .log_button {
+                                padding: 0px 40px;
+                                p {
+                                    font-size: 25px;
+                                }
+                            }
+                        }
+                    }
                 }
-              }
-            }
-          }
-
-        }
-        .latest_post, .All_posts{
-          .post{
-            grid-auto-rows: 115px;
-            overflow: hidden;
-            height: 100%;
-
-            // edited font size
-            p{
-              font-size: 25px;
-            }
-            // gives the box shadow a transition effect
-            transition: box-shadow .5s;
-            // on hover
-            &:hover{
-              box-shadow: 4px 5px 7px 3px #a5a5a5;
-              -webkit-box-shadow: 4px 5px 7px 3px #a5a5a5;
-            }
-            // add padding and remove margin from all
-            .post-body, .post-footer,.post-heading{
-              margin: 0px;
-              padding: 0px 10px;
-              min-width: 20px;
-            }
-            // moves heading into the block
-            .post-heading{
-              grid-column: 2/4;
-              grid-row: 1/2;
-              -webkit-grid-column: 2/4;
-              -webkit-grid-row: 1/2;
-              // makes space to show image
-              margin-top: 10px;
-            }
-            .post-image{
-              grid-column: 1/3;
-              grid-row: 1/4;
-              -webkit-grid-column: 1/3;
-              -webkit-grid-row: 1/4;
-              width: auto;
-              height: 100%;
-              overflow: hidden;
-              img{
-                width: auto;
-              }
-            }
-            .post-body{
-              grid-column: 2/4;
-              grid-row: 2/3;
-              -webkit-grid-column: 2/4;
-              -webkit-grid-row: 2/3;
-            }
-            .post-footer{
-              grid-column: 2/4;
-              grid-row: 3/4;
-              -webkit-grid-column: 2/4;
-              -webkit-grid-row: 3/4;
-              // makes space to show image
-              margin-bottom: 10px;
-              .edit_delete{
-                .edit_button{
-                  // edited button size
-                  padding: 0px 40px;
-                  p{
-                    font-size: 25px;
-                  }
+                .latest_post,
+                .All_posts {
+                    .post {
+                        grid-auto-rows: 115px;
+                        overflow: hidden;
+                        height: 100%;
+                        // edited font size
+                        p {
+                            font-size: 25px;
+                        }
+                        // gives the box shadow a transition effect
+                        transition: box-shadow .5s;
+                        // on hover
+                        &:hover {
+                            box-shadow: 4px 5px 7px 3px #a5a5a5;
+                            -webkit-box-shadow: 4px 5px 7px 3px #a5a5a5;
+                        }
+                        // add padding and remove margin from all
+                        .post-body,
+                        .post-footer,
+                        .post-heading {
+                            margin: 0px;
+                            padding: 0px 10px;
+                            min-width: 20px;
+                        }
+                        // moves heading into the block
+                        .post-heading {
+                            grid-column: 2/4;
+                            grid-row: 1/2;
+                            -webkit-grid-column: 2/4;
+                            -webkit-grid-row: 1/2;
+                            // makes space to show image
+                            margin-top: 10px;
+                        }
+                        .post-image {
+                            grid-column: 1/2 !important;
+                            grid-row: 1/4;
+                            -webkit-grid-column: 1/2;
+                            -webkit-grid-row: 1/4;
+                            width: auto;
+                            height: 100%;
+                            overflow: hidden;
+                            img {
+                                width: auto;
+                            }
+                        }
+                        .post-body {
+                            grid-column: 2/4;
+                            grid-row: 2/3;
+                            -webkit-grid-column: 2/4;
+                            -webkit-grid-row: 2/3;
+                        }
+                        .post-footer {
+                            grid-column: 2/4;
+                            grid-row: 3/4;
+                            -webkit-grid-column: 2/4;
+                            -webkit-grid-row: 3/4;
+                            // makes space to show image
+                            margin-bottom: 10px;
+                            .edit_delete {
+                                .edit_button {
+                                    // edited button size
+                                    padding: 0px 40px;
+                                    p {
+                                        font-size: 25px;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-              }
             }
-          }
         }
-      }
     }
-  }
 }
 
 // desktop view
 @media only screen and (min-device-width:1000px) {
-  body{
-    main{
-      .content{
-        display: grid;
-        grid-template-columns: 15% 1fr;
-        header{
-          // grid columns
-          grid-column: 1/3;
-          -webkit-grid-column: 1/3;
-          padding: 90px 0px;
-          .intro{
-            margin: 20px 15%;
-            p{
-              font-size: 18px;
-            }
-            a{
-              .log_button{
-                // edited width
-                padding: 0px 25px;
-                // border
-                border: 2px white solid;
-                p{
-                  // change size of font
-                  font-size: 17px;
-                  margin: 9px 0px;
+    body {
+        main {
+            .content {
+                display: grid;
+                grid-template-columns: 15% 1fr;
+                header {
+                    // grid columns
+                    grid-column: 1/3;
+                    -webkit-grid-column: 1/3;
+                    padding: 90px 0px;
+                    .intro {
+                        margin: 20px 15%;
+                        p {
+                            font-size: 18px;
+                        }
+                        a {
+                            .log_button {
+                                // edited width
+                                padding: 0px 25px;
+                                // border
+                                border: 2px white solid;
+                                p {
+                                    // change size of font
+                                    font-size: 17px;
+                                    margin: 9px 0px;
+                                }
+                            }
+                        }
+                    }
                 }
-              }
-            }
-          }
-        }
-        .latest_post,.All_posts{
-          // grid columns
-          grid-column: 2/3;
-          -webkit-grid-column: 2/3;
-          padding: 30px  5px;
-          // centers content
-          padding-right: 16%;
-          .h2{
-            margin-left: 20px;
-          }
-          .post{
-            h2{
-              font-size: 20px;
-            }
-            p{
-              font-size: 15px;
-            }
-            .post-footer{
-              .edit_delete{
-                .edit_button{
-                  // edited width
-                  padding: 0px 25px;
-                  // border
-                  border: 2px #4f4e4e solid;
-                  p{
-                    // change size of font
-                    font-size: 17px;
-                    margin: 9px 0px;
-                  }
+                .latest_post,
+                .All_posts {
+                    // grid columns
+                    grid-column: 2/3;
+                    -webkit-grid-column: 2/3;
+                    padding: 30px 5px;
+                    // centers content
+                    padding-right: 16%;
+                    .h2 {
+                        margin-left: 20px;
+                    }
+                    .post {
+                        h2 {
+                            font-size: 20px;
+                        }
+                        p {
+                            font-size: 15px;
+                        }
+                        .post-footer {
+                            .edit_delete {
+                                .edit_button {
+                                    // edited width
+                                    padding: 0px 25px;
+                                    // border
+                                    border: 2px #4f4e4e solid;
+                                    p {
+                                        // change size of font
+                                        font-size: 17px;
+                                        margin: 9px 0px;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-              }
             }
-          }
         }
-      }
     }
-  }
 }

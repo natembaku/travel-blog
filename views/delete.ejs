@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="icon" href="/images/icons_logos/favicon.ico">
 
     <!-- usual styles -->
     <link rel="stylesheet" href="/stylesheets/css/nav_footer.css">
@@ -10,47 +14,54 @@
 
 
     <style media="screen">
-      .create_page{
-        color: red;
-      }
+        .create_page {
+            color: red;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <main>
-      <!-- the nav bar -->
-      <% include templates/nav.ejs %>
-      <form class=""  method="post">
-        <div class="content">
-          <header>
-            <h1>Delete Post</h1>
-            <p>Are you sure you want to delete this post?
-              <br>
-              This action can not be undone!
-            </p>
-            <p></p>
-          </header>
-          <div class="post">
-            <div class="post-heading">
-              <h2><%= posts[id].title %></h2>
-              <p><%= posts[id].date %></p>
-            </div>
-            <div class="post-body">
-              <figure class="post-image">
-                <img src="<%- posts[id].image %>" alt="">
-              </figure>
-            <%- posts[id].description %>
-            </div>
-            <div class="post-footer">
-              <p>Author: <%= posts[id].author %></p>
-              <div class="edit_delete">
-                <button type="submit" name="button" class="edit_button"><p>Delete</p></button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
-      <!-- the footer -->
-      <% include templates/footer.ejs %>
+        <!-- the nav bar -->
+        <% include templates/nav.ejs %>
+            <form class="" method="post">
+                <div class="content">
+                    <header>
+                        <h1>Delete Post</h1>
+                        <p>Are you sure you want to delete this post?
+                            <br> This action can not be undone!
+                        </p>
+                        <p></p>
+                    </header>
+                    <div class="post">
+                        <div class="post-heading">
+                            <h2>
+                                <%= posts[id].title %>
+                            </h2>
+                            <p>
+                                <%= posts[id].date %>
+                            </p>
+                        </div>
+                        <div class="post-body">
+                            <figure class="post-image">
+                                <img src="<%- posts[id].image %>" alt="">
+                            </figure>
+                            <%- posts[id].description %>
+                        </div>
+                        <div class="post-footer">
+                            <p>Author:
+                                <%= posts[id].author %>
+                            </p>
+                            <div class="edit_delete">
+                                <button type="submit" name="button" class="edit_button"><p>Delete</p></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- the footer -->
+            <% include templates/footer.ejs %>
     </main>
-  </body>
+</body>
+
 </html>

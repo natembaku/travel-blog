@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
@@ -14,53 +17,60 @@
 
 
     <style media="screen">
-      .create_page{
-        color: red !important;
-      }
+        .create_page {
+            color: red !important;
+        }
     </style>
 
-  </head>
-  <body>
-    <main>
-      <!-- the nav bar -->
-      <% include templates/nav.ejs %>
-      <% if(logedIn == true){%>
-        <div class="content ">
-          <header>
-            <h1>Create your Blog here!</h1>
-            <p>Become a blogger here with bloggle and tell your story about your travels around the world.Let others know about your life filled with exitement and adventure!</p>
-          </header>
-          <form method="post" id="create_new">
-            <h3>Author:</h3>
-            <p><%= user %></p>
-            <div class="input_box">
-              <h3>Title</h3>
-              <input type="text" name="title" value="" placeholder="Title">
-            </div>
-            <div class="input_box">
-              <h3>Image URL:</h3>
-              <input type="text" name="image" value="" placeholder="Image URL">
-            </div>
-            <h3>Post Content:</h3>
-            <textarea id="summernote" name="content" ></textarea>
-            <button type="submit" name="submit" class="edit_button"><p>Post</p></button>
-          </form>
+</head>
 
-        </div>
-      <%}else{%>
-        <p class="logged_out">Please <a href="/sign_in">Log In</a> before attempting to create a post!</p>
-      <%} %>
-      <!-- the footer -->
-      <% include templates/footer.ejs %>
+<body>
+    <main>
+        <!-- the nav bar -->
+        <% include templates/nav.ejs %>
+            <% if(logedIn == true){%>
+                <div class="content ">
+                    <header>
+                        <h1>Create your Blog here!</h1>
+                        <p>Become a blogger here with bloggle and tell your story about your travels around the world.Let others know about your life filled with exitement and adventure!</p>
+                    </header>
+                    <form method="post" id="create_new">
+                        <h3>Author:</h3>
+                        <p>
+                            <%= user %>
+                        </p>
+                        <div class="input_box">
+                            <h3>Title</h3>
+                            <input type="text" name="title" value="" placeholder="Title">
+                        </div>
+                        <div class="input_box">
+                            <h3>Image URL:</h3>
+                            <input type="text" name="image" value="" placeholder="Image URL">
+                        </div>
+                        <h3>Post Content:</h3>
+                        <textarea id="summernote" name="content"></textarea>
+                        <button type="submit" name="submit" class="edit_button"><p>Post</p></button>
+                    </form>
+
+                </div>
+                <%}else{%>
+                    <p class="logged_out">Please <a href="/sign_in">Log In</a> before attempting to create a post!</p>
+                    <%} %>
+                        <!-- the footer -->
+                        <section>
+
+                            <% include templates/footer.ejs %>
+                        </section>
     </main>
     <script type="text/javascript">
-      $('#summernote').summernote({
-        height: 300,                 // set editor height
-        minHeight: null,             // set minimum height of editor
-        maxHeight: null,             // set maximum height of editor
-        focus: true                  // set focus to editable area after initializing summernote
-      });
+        $('#summernote').summernote({
+            height: 300, // set editor height
+            minHeight: null, // set minimum height of editor
+            maxHeight: null, // set maximum height of editor
+            focus: true // set focus to editable area after initializing summernote
+        });
     </script>
     <script type="text/javascript" src="scripts/create.js"></script>
-  </body>
+</body>
+
 </html>
